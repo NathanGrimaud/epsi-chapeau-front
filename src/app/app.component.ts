@@ -73,6 +73,9 @@ export class AppComponent implements OnInit {
     source$.subscribe();
   }
 
+  reload() {
+    window.location.reload();
+  }
   getBase64() {
     return this.webcam
       .getBase64()

@@ -1,6 +1,5 @@
 <div class="message" [ngClass]="side">
-  <p class="text">
-    {{message}}
+  <p class="text" [innerHTML]="message | linkify">
   </p>
   <img class="sender" *ngIf="sender === 'pole' " src="assets/robot.png" alt="">
   <img class="sender" *ngIf="sender === 'bot'" src="assets/pole.png" alt="">
