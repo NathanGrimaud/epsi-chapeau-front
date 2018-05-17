@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
   constructor(private appService: AppService, private store: Store<State>) {}
   ngOnInit() {
     this.store.dispatch(new LoadConversationAction());
-
     const source$ = interval(10000);
     source$
       .pipe(

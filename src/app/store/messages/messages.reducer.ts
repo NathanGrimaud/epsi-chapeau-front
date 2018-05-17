@@ -32,8 +32,16 @@ export function reducer(state = initialState, action: messages.Actions): Message
       };
     }
 
+    case messages.SET_MESSAGES: {
+      console.log(action.payload);
+      return {
+        ...state,
+        responses: action.payload.responses
+      };
+    }
     case messages.CREATE_MESSAGES_SUCCESS: {
       const result = [...state.result, action.payload];
+      console.log(action, result);
       return {
         ...state,
         result: result,

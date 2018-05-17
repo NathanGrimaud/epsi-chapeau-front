@@ -30,7 +30,7 @@ export function reducer(state = initialState, action: conversation.Actions): Con
     }
 
     case conversation.LOAD_CONVERSATION_SUCCESS: {
-      console.log(action.payload);
+      console.log('PAYLOAD !', action);
       return {
         ...state,
         result: action.payload,
