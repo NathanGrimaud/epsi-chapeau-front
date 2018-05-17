@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 8;
+  height: 40%;
   transition: all 0.1s ease-in;
   /*background-image: url('../../../assets/bg.jpg');
   background-size: cover;*/
@@ -19,8 +19,14 @@
   align-self: flex-end;
   padding: 0px 20px;
 }
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .top {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;

@@ -30,8 +30,14 @@
 .right {
   align-self: flex-end;
 }
+.right > .text {
+  text-align: right;
+}
 .left {
   align-self: flex-start;
+}
+.left > .text {
+  text-align: left;
 }
 
 .sender {

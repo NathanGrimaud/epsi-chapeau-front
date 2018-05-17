@@ -13,7 +13,6 @@ import { Message } from '../../../store/messages/messages.reducer';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  @HostBinding('style.flex-grow') grow = 0;
   @HostBinding('style.opacity') opacity = 1;
 
   messages: Store<Message[]>;
@@ -25,12 +24,15 @@ export class ListComponent implements OnInit {
       .pipe(
         skip(1),
         map((result: any) => {
-          const socket = io(environment.image_api);
-          socket.on('connect', function() {});
+          const socket = io(environment.image_api, { transports: ['polling'] });
+          socket.on('connect', function() {
+            console.log('connected');
+          });
           socket.on(`response_${result.id}`, payload => {
+            console.log('received', payload);
             this.store.dispatch(
               new SetMessagesAction({
-                content: payload.message,
+                content: payload.content,
                 sender: 'bot',
                 side: 'left'
               })
@@ -44,7 +46,6 @@ export class ListComponent implements OnInit {
       .pipe(
         skip(1),
         tap(_ => (this.opacity = 0)),
-        tap(messages => (this.grow = 5)),
         tap(messages => (this.opacity = 1))
       )
       .subscribe();

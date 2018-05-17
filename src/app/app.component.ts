@@ -32,12 +32,24 @@ const moodsType = [
 export class AppComponent implements OnInit {
   title = 'app';
   webcam: WebCamComponent;
-  mood: string = neutral;
-
+  mood: Store<any>;
   constructor(private appService: AppService, private store: Store<State>) {}
   ngOnInit() {
     this.store.dispatch(new LoadConversationAction());
+    this.mood = this.store.select(state => state.conversation.mood);
     const source$ = interval(10000);
+    this.store
+      .select(state => state.messages.messages)
+      .pipe(
+        map(() => {
+          setTimeout(() => {
+            console.log('will scroll');
+            const element = document.querySelector('body > app-root > div > app-list');
+            element.scrollTop = element.scrollHeight;
+          }, 100);
+        })
+      )
+      .subscribe();
     source$
       .pipe(
         mergeMap(() => fromPromise(this.getBase64())),
@@ -48,7 +60,8 @@ export class AppComponent implements OnInit {
             const verry = moodsType.find(mood => payload.annotations[mood] === moods.VERY_LIKELY);
             const abit = moodsType.find(mood => payload.annotations[mood] === moods.LIKELY);
             const mood = verry !== undefined ? verry : abit !== undefined ? abit : neutral;
-            this.store.dispatch(new SetMoodAction(mood));
+
+            this.store.dispatch(new SetMoodAction('headwearLikelihood'));
           }
         }),
         catchError((err, caught) => {

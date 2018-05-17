@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  image_api: 'http://localhost:3000'
+  image_api: 'https://gateway.hurrycane.fr'
 };
 
 /*
