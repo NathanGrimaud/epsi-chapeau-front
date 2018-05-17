@@ -13,7 +13,9 @@
         <div class="custom-card-title">
           <h3>{{item.title}}</h3>
         </div>
-        <div class="custom-card-description">{{item.description}}</div>
+        <div class="custom-card-description elipsis">
+          {{item.description}}
+        </div>
         <div class="custom-card-actions">
           <button mat-button (click)="move(item.link)" color="accent">Y ALLER</button>
         </div>
