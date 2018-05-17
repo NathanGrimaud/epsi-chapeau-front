@@ -2,5 +2,5 @@
 <div style="text-align:center" class="colored-background" [ngClass]="mood">
   <router-outlet #o="outlet"></router-outlet>
   <app-list></app-list>
-  <ack-webcam style="display: none;" [(ref)]="webcam" [options]="options" (success)="onCamSuccess($event)" (catch)="onCamError($event)"></ack-webcam>
+  <ack-webcam style="display: none;" [(ref)]="webcam"></ack-webcam>
 </div>
