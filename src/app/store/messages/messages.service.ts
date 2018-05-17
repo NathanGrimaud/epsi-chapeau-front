@@ -8,6 +8,6 @@ export class MessagesService {
   constructor(private http: HttpClient) {}
 
   createMessages(param: any): Observable<any> {
-    return this.http.post(`${environment.image_api}/message`, { question: param });
+    return this.http.post(`${environment.image_api}/message`, param);
   }
 }

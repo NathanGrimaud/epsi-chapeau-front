@@ -7,7 +7,7 @@ import { AppService } from './app.service';
 import { Observable, empty } from 'rxjs';
 import { State } from './store/app.store';
 import { Store } from '@ngrx/store';
-import { LoadConversationAction } from './store/conversation/conversation.actions';
+import { LoadConversationAction, SetMoodAction } from './store/conversation/conversation.actions';
 const moods = {
   VERY_UNLIKELY: 'VERY_UNLIKELY',
   UNLIKELY: 'UNLIKELY',
@@ -45,10 +45,10 @@ export class AppComponent implements OnInit {
         map(response => {
           const payload = response.json();
           if (payload.annotations) {
-            console.log(payload.annotations);
             const verry = moodsType.find(mood => payload.annotations[mood] === moods.VERY_LIKELY);
             const abit = moodsType.find(mood => payload.annotations[mood] === moods.LIKELY);
-            this.mood = verry !== undefined ? verry : abit !== undefined ? abit : neutral;
+            const mood = verry !== undefined ? verry : abit !== undefined ? abit : neutral;
+            this.store.dispatch(new SetMoodAction(mood));
           }
         }),
         catchError((err, caught) => {

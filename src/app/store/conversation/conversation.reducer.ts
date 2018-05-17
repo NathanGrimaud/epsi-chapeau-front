@@ -5,6 +5,7 @@ export interface ConversationState {
   entities: { [id: string]: any };
   result: string[];
   error: Error;
+  mood: String;
   socket: SocketIOClient.Socket;
   type: string;
 }
@@ -13,6 +14,7 @@ export const initialState: ConversationState = {
   loading: false,
   entities: {},
   result: [],
+  mood: 'neutral',
   error: null,
   socket: null,
   type: ''
@@ -28,9 +30,14 @@ export function reducer(state = initialState, action: conversation.Actions): Con
         type: action.type
       };
     }
+    case conversation.SET_MOOD: {
+      return {
+        ...state,
+        mood: action.payload
+      };
+    }
 
     case conversation.LOAD_CONVERSATION_SUCCESS: {
-      console.log('PAYLOAD !', action);
       return {
         ...state,
         result: action.payload,

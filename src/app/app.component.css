@@ -14,7 +14,15 @@
   background-image: url('../assets/hat.png');
   background-size: cover;
 }
-
+.logo {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  display: flex;
+  align-items: center;
+  color: rgb(27, 43, 102);
+  justify-content: center;
+}
 .colored-background {
   -webkit-transition: background-color 2s ease-out;
   -moz-transition: background-color 2s ease-out;

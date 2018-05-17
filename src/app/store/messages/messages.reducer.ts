@@ -1,12 +1,17 @@
 import * as messages from './messages.actions';
 import { HttpErrorResponse } from '@angular/common/http';
 
+export interface Message {
+  content: string;
+  sender: string;
+  side: string;
+}
+
 export interface MessagesState {
   loading: boolean;
   entities: { [id: string]: any };
   result: any[];
-  question: string;
-  responses: string[];
+  messages: Message[];
   error: HttpErrorResponse;
   type: string;
 }
@@ -15,8 +20,7 @@ export const initialState: MessagesState = {
   loading: false,
   entities: {},
   result: [],
-  question: null,
-  responses: [],
+  messages: [],
   error: null,
   type: ''
 };
@@ -33,21 +37,17 @@ export function reducer(state = initialState, action: messages.Actions): Message
     }
 
     case messages.SET_MESSAGES: {
-      console.log(action.payload);
       return {
         ...state,
-        responses: action.payload.responses
+        messages: [...state.messages, action.payload]
       };
     }
     case messages.CREATE_MESSAGES_SUCCESS: {
       const result = [...state.result, action.payload];
-      console.log(action, result);
       return {
         ...state,
         result: result,
         loading: false,
-        question: action.payload.question,
-        responses: action.payload.results,
         error: null,
         type: action.type
       };

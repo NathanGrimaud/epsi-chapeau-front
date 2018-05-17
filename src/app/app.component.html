@@ -1,5 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center" class="colored-background" [ngClass]="mood">
+  <div class="logo">
+    <img src="assets/pole.png" alt="">
+    <h1>Chapeau l'emploi</h1>
+  </div>
   <router-outlet #o="outlet"></router-outlet>
   <app-list></app-list>
   <ack-webcam style="display: none;" [(ref)]="webcam"></ack-webcam>

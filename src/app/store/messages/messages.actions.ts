@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Message } from './messages.reducer';
 
 export const CREATE_MESSAGES = '[Messages] Get Messages';
 export const CREATE_MESSAGES_SUCCESS = '[Messages] Get Messages Success';
@@ -22,7 +23,7 @@ export class CreateMessagesSuccessAction implements Action {
 
 export class SetMessagesAction implements Action {
   readonly type = SET_MESSAGES;
-  constructor(public payload: any) {}
+  constructor(public payload: Message) {}
 }
 
 export class CreateMessagesFailAction implements Action {
