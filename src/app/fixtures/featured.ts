@@ -7,7 +7,7 @@ export default [
     link: 'https://candidat.pole-emploi.fr/espacepersonnel/'
   },
   {
-    title: 'Nouveautées',
+    title: 'Nouveautés',
     icon: 'assets/news.png',
     image: 'assets/newspaper.jpeg',
     description: "Toute l'actualité de pôle emploi !",
@@ -25,7 +25,7 @@ export default [
     title: 'Inscription',
     icon: 'assets/register.png',
     image: 'assets/form.jpeg',
-    description: 'Accèdez à votre compte pôle emploi !',
+    description: 'Accédez à votre compte pôle emploi !',
     link: 'https://candidat.pole-emploi.fr/inscription/preambule'
   }
 ];
