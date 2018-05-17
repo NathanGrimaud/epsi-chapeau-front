@@ -24,6 +24,17 @@
   justify-content: center;
   cursor: pointer;
 }
+.texts {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.texts > h1 {
+  margin: 2%;
+}
+.small {
+  opacity: 0.5;
+}
 .colored-background {
   -webkit-transition: background-color 2s ease-out;
   -moz-transition: background-color 2s ease-out;

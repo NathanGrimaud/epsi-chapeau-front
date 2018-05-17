@@ -2,7 +2,10 @@
 <div style="text-align:center" class="colored-background" [ngClass]="mood ">
   <div class="logo" (click)="reload()">
     <img src="assets/pole.png" alt="">
-    <h1>Chapeau l'emploi</h1>
+    <div class="texts">
+      <h1>Chapeau l'emploi</h1>
+      <div class="small">{{(id|async).id}}</div>
+    </div>
   </div>
   <router-outlet #o="outlet"></router-outlet>
   <app-list></app-list>

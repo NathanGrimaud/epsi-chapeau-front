@@ -33,10 +33,13 @@ export class AppComponent implements OnInit {
   title = 'app';
   webcam: WebCamComponent;
   mood: Store<any>;
+  id: Store<any>;
   constructor(private appService: AppService, private store: Store<State>) {}
   ngOnInit() {
     this.store.dispatch(new LoadConversationAction());
     this.mood = this.store.select(state => state.conversation.mood);
+    this.id = this.store.select(state => state.conversation.result);
+    this.id.subscribe();
     const source$ = interval(10000);
     this.store
       .select(state => state.messages.messages)
