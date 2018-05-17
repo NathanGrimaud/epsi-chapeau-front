@@ -1,0 +1,23 @@
+<div class="featured">
+  <mat-grid-list cols="4" rowHeight="2:3">
+    <mat-grid-tile *ngFor="let item of featured">
+      <div class="cutom-card">
+        <div class="header">
+          <div class="cover" [style.background-image]="'url('+item.image+')'" alt=""></div>
+        </div>
+        <div class="custom-card-image">
+          <div class="losange">
+            <img src="{{item.icon}}" alt="">
+          </div>
+        </div>
+        <div class="custom-card-title">
+          <h3>{{item.title}}</h3>
+        </div>
+        <div class="custom-card-description">{{item.description}}</div>
+        <div class="custom-card-actions">
+          <button mat-button (click)="move(item.link)" color="accent">Y ALLER</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

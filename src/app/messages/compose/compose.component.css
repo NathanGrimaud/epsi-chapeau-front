@@ -1,0 +1,106 @@
+:host {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 8;
+  transition: all 0.1s ease-in;
+  /*background-image: url('../../../assets/bg.jpg');
+  background-size: cover;*/
+}
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bot {
+  width: 70px;
+  align-self: flex-end;
+  padding: 0px 20px;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+.message-field {
+  width: 70%;
+}
+.compose {
+  width: 90%;
+}
+
+.message-form {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.bubble-end {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid #fff;
+  align-self: flex-end;
+  margin-left: -3%;
+  margin-bottom: 2%;
+}
+
+.jiggle {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation-delay: 2s;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+h2 {
+  margin-left: 20px;
+}
+.question {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  2% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  4% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  6% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  8% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  10% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+}

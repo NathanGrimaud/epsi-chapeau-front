@@ -1,0 +1,36 @@
+/*.neutral {
+  background-color: #2196f3;
+}
+.joyLikelihood,
+.surpriseLikelihood {
+  background-color: #4caf50;
+}
+.sorrowLikelihood,
+.angerLikelihood {
+  background-color: #f44336;
+}
+*/
+.headwearLikelihood {
+  background-image: url('../assets/hat.png');
+  background-size: cover;
+}
+
+.colored-background {
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+  transition: all 1s;
+  width: 100%;
+  height: 100%;
+  /* background-image: url('../assets/bg.jpg');*/
+  background-color: #eeeeee;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.topicon {
+  font-size: xx-large;
+}

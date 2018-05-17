@@ -1,0 +1,25 @@
+<div class="compose">
+
+  <div class="bubble">
+    <div class="actions">
+      <div class="question">
+        <div class="top">
+          <mat-icon class="jiggle" aria-label="Rechercher">search</mat-icon>
+          <h2>Que voulez vous faire aujourd'hui ? </h2>
+        </div>
+        <div class="bottom">
+          <form class="message-form" action="">
+            <mat-form-field class="message-field">
+              <input matInput placeholder="Entrez içi ce que voulez vous faire" name="question" [(ngModel)]="question" value="" />
+            </mat-form-field>
+            <button (click)="onClick()" mat-icon-button>
+              <mat-icon aria-label="Example icon-button with a heart icon">send</mat-icon>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bubble-end"></div>
+    <img src="assets/robot.png" class="bot" alt="">
+  </div>
+</div>

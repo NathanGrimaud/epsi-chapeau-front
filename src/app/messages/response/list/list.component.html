@@ -1,0 +1,9 @@
+<div class="messages">
+  <div class="found" *ngIf="(messages|async).length>0; else elseBlock">
+    <app-one sender="bot" side="right" message="{{question | async}}"></app-one>
+    <app-one sender="pole" side="left" message="{{message}}" *ngFor="let message of messages | async"></app-one>
+  </div>
+  <ng-template #elseBlock>
+    <app-featured></app-featured>
+  </ng-template>
+</div>

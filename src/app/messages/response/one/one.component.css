@@ -1,0 +1,42 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1%;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+.message.right {
+  justify-content: flex-end;
+}
+.message.left {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.right {
+  align-self: flex-end;
+}
+.left {
+  align-self: flex-start;
+}
+
+.sender {
+  width: 5%;
+  width: 5%;
+
+  margin: 0px 3%;
+}

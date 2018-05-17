@@ -1,0 +1,15 @@
+.messages {
+  width: 80%;
+  margin: auto;
+}
+.message {
+  margin: 10px;
+}
+.found {
+  width: 80%;
+  margin: auto;
+}
+:host {
+  width: 100%;
+  transition: flex-grow 0.3s ease-in, opacity 0.1s ease-in 0.3s;
+}
