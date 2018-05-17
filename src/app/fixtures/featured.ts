@@ -18,7 +18,7 @@ export default [
     icon: 'assets/advice.png',
     image: 'assets/help.jpeg',
 
-    description: 'Accèdez à plein de conseils trop cools et peps!',
+    description: 'Des conseils pour faciliter vos démarches',
     link: 'https://www.pole-emploi.fr/candidat/'
   },
   {
