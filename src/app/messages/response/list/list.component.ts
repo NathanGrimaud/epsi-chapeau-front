@@ -14,6 +14,7 @@ import { Message } from '../../../store/messages/messages.reducer';
 })
 export class ListComponent implements OnInit {
   @HostBinding('style.opacity') opacity = 1;
+  @HostBinding('style.height') height = '50%';
 
   messages: Store<Message[]>;
   constructor(private store: Store<State>) {}
@@ -46,6 +47,7 @@ export class ListComponent implements OnInit {
       .pipe(
         skip(1),
         tap(_ => (this.opacity = 0)),
+        tap(_ => (this.height = '60%')),
         tap(messages => (this.opacity = 1))
       )
       .subscribe();

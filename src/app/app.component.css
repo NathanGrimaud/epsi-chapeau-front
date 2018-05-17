@@ -32,12 +32,12 @@
   transition: all 1s;
   width: 100%;
   height: 100%;
+  justify-content: space-between;
   /* background-image: url('../assets/bg.jpg');*/
   background-color: #eeeeee;
   background-size: cover;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 .topicon {
