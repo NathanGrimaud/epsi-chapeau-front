@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
             const abit = moodsType.find(mood => payload.annotations[mood] === moods.LIKELY);
             const mood = verry !== undefined ? verry : abit !== undefined ? abit : neutral;
 
-            this.store.dispatch(new SetMoodAction('headwearLikelihood'));
+            this.store.dispatch(new SetMoodAction(mood));
           }
         }),
         catchError((err, caught) => {
